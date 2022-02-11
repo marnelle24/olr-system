@@ -21663,369 +21663,345 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "masthead" }, [
+  return _c("div", { staticClass: "page-container" }, [
     _c("div", { staticClass: "container px-5" }, [
-      _vm.event
-        ? _c(
-            "section",
-            {
-              staticClass:
-                "p-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+      _c("section", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-8" }, [
+          _c("img", {
+            staticClass: "w-100",
+            attrs: {
+              src: "/storage/" + _vm.event.posterPath,
+              alt: _vm.event.title,
             },
-            [
-              _c("div", { staticClass: "col-span-2" }, [
-                _c("img", {
-                  staticClass: "w-full",
-                  attrs: {
-                    src: "/storage/" + _vm.event.posterPath,
-                    alt: _vm.event.title,
-                  },
-                }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-gray-800 text-4xl font-semibold pt-5 pb-3",
-                  },
-                  [_vm._v(_vm._s(_vm.event.title))]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "pb-6 mt-auto" },
-                  _vm._l(_vm.event.departments, function (department) {
-                    return _c(
-                      "span",
-                      {
-                        key: department.id,
-                        staticClass:
-                          "inline-block hover:bg-yellow-600 bg-yellow-800 rounded-full px-3 py-1 text-xs font-semibold text-white mr-2 mb-2 cursor-pointer",
+          }),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-gray-800 text-4xl font-semibold pt-5 pb-3" },
+            [_vm._v(_vm._s(_vm.event.title))]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "pb-6 mt-auto" },
+            _vm._l(_vm.event.departments, function (department) {
+              return _c(
+                "span",
+                {
+                  key: department.id,
+                  staticClass:
+                    "inline-block hover:bg-yellow-600 bg-yellow-800 rounded-full px-3 py-1 text-xs font-semibold text-white mr-2 mb-2 cursor-pointer",
+                },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "department.show",
+                          params: { slug: department.slug },
+                        },
                       },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: {
-                                name: "department.show",
-                                params: { slug: department.slug },
-                              },
-                            },
-                          },
-                          [_vm._v(_vm._s(department.name))]
-                        ),
-                      ],
-                      1
-                    )
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
+                    },
+                    [_vm._v(_vm._s(department.name))]
+                  ),
+                ],
+                1
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-sm font-thin italic text-gray-800 mb-1" },
+            [
+              _vm._v(
+                "Published on: " + _vm._s(_vm.formatDate(_vm.event.created_at))
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-gray-600 text-md" }, [
+            _vm._v(_vm._s(_vm.event.description)),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "py-6 mt-auto" },
+            [
+              _c(
+                "p",
+                { staticClass: "text-sm font-thin italic text-gray-800" },
+                [_vm._v("Category:")]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.event.categories, function (category) {
+                return _c(
+                  "span",
                   {
-                    staticClass: "text-sm font-thin italic text-gray-800 mb-1",
+                    key: category.id,
+                    staticClass:
+                      "inline-block hover:bg-gray-400 bg-gray-200 rounded-full px-3 py-1 text-xs text-gray-700 mr-2 mb-2 cursor-pointer",
                   },
                   [
-                    _vm._v(
-                      "Published on: " +
-                        _vm._s(_vm.formatDate(_vm.event.created_at))
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: {
+                            name: "category.show",
+                            params: { slug: category.slug },
+                          },
+                        },
+                      },
+                      [_vm._v(_vm._s(category.name))]
                     ),
+                  ],
+                  1
+                )
+              }),
+            ],
+            2
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4" }, [
+          _c(
+            "div",
+            { staticClass: "shadow-lg p-5 mb-10 border-t-2 border-gray-50" },
+            [
+              _c(
+                "span",
+                { staticClass: "font-normal text-sm mb-4 text-gray-600" },
+                [_vm._v("Price: ")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "mb-2" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "svg_icon float-left mr-2",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      fill: "none",
+                      viewBox: "0 0 24 24",
+                      stroke: "currentColor",
+                    },
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
+                      },
+                    }),
                   ]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-gray-600 text-md" }, [
-                  _vm._v(_vm._s(_vm.event.description)),
-                ]),
-                _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "py-6 mt-auto" },
+                  "span",
+                  { staticClass: "text-gray-700 text-2xl font-semibold" },
                   [
-                    _c(
-                      "p",
-                      { staticClass: "text-sm font-thin italic text-gray-800" },
-                      [_vm._v("Category:")]
-                    ),
-                    _vm._v(" "),
-                    _vm._l(_vm.event.categories, function (category) {
-                      return _c(
-                        "span",
-                        {
-                          key: category.id,
-                          staticClass:
-                            "inline-block hover:bg-gray-400 bg-gray-200 rounded-full px-3 py-1 text-xs text-gray-700 mr-2 mb-2 cursor-pointer",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "category.show",
-                                  params: { slug: category.slug },
-                                },
-                              },
-                            },
-                            [_vm._v(_vm._s(category.name))]
-                          ),
-                        ],
-                        1
+                    _vm._v(
+                      _vm._s(
+                        _vm.event.price === 0
+                          ? "FREE"
+                          : _vm.formatCurrency(_vm.event.price)
                       )
-                    }),
-                  ],
-                  2
+                    ),
+                  ]
                 ),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "flex flex-col" }, [
+              _c(
+                "span",
+                { staticClass: "font-normal text-sm mt-4 text-gray-600" },
+                [_vm._v("Date: ")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "mb-2" }, [
                 _c(
-                  "div",
+                  "svg",
                   {
-                    staticClass:
-                      "shadow-lg p-5 mb-10 border-t-2 border-gray-50",
+                    staticClass: "svg_icon float-left mr-2",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      fill: "none",
+                      viewBox: "0 0 24 20",
+                      stroke: "currentColor",
+                    },
                   },
                   [
-                    _c(
-                      "span",
-                      { staticClass: "font-normal text-sm mb-4 text-gray-600" },
-                      [_vm._v("Price: ")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-2" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "h-7 w-7 text-gray-700 text-2xl float-left mr-2 font-semibold",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            fill: "none",
-                            viewBox: "0 0 24 24",
-                            stroke: "currentColor",
-                          },
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              "stroke-width": "2",
-                              d: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "span",
-                        { staticClass: "text-gray-700 text-2xl font-semibold" },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.event.price === 0
-                                ? "FREE"
-                                : _vm.formatCurrency(_vm.event.price)
-                            )
-                          ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "font-normal text-sm mt-4 text-gray-600" },
-                      [_vm._v("Date: ")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-2" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "h-5 w-5 text-gray-700 text-lg float-left mr-2 font-thin",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            fill: "none",
-                            viewBox: "0 0 24 20",
-                            stroke: "currentColor",
-                          },
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              "stroke-width": "2",
-                              d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "text-gray-700 text-lg" }, [
-                        _vm._v(_vm._s(_vm.formatDate(_vm.event.startDate))),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "font-normal text-sm mb-4 text-gray-600" },
-                      [_vm._v("Time: ")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-2" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "h-5 w-5 text-gray-700 text-lg float-left mr-2 font-thin",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            fill: "none",
-                            viewBox: "0 0 24 20",
-                            stroke: "currentColor",
-                          },
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              "stroke-width": "2",
-                              d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "text-gray-700 text-lg" }, [
-                        _vm._v(
-                          _vm._s(_vm.formatTime(_vm.event.startTime)) +
-                            " - " +
-                            _vm._s(_vm.formatTime(_vm.event.endTime))
-                        ),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "font-normal text-sm mb-4 text-gray-600" },
-                      [_vm._v("Venue: ")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "mb-4" },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "h-5 w-5 text-gray-700 text-lg float-left mr-2 font-thin",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              fill: "none",
-                              viewBox: "0 0 24 20",
-                              stroke: "currentColor",
-                            },
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                "stroke-linecap": "round",
-                                "stroke-linejoin": "round",
-                                "stroke-width": "2",
-                                d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("path", {
-                              attrs: {
-                                "stroke-linecap": "round",
-                                "stroke-linejoin": "round",
-                                "stroke-width": "2",
-                                d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm.event.eventType === "online"
-                          ? [
-                              _c("img", {
-                                staticClass: "float-left mr-2",
-                                attrs: {
-                                  src: "https://img.icons8.com/color/25/000000/zoom.png",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "text-gray-700 text-lg font-font-semibold",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                " +
-                                      _vm._s(
-                                        _vm.parsingJSONData(
-                                          _vm.event.onlineEventDetails
-                                        ).platform
-                                      ) +
-                                      "\n                            "
-                                  ),
-                                ]
-                              ),
-                            ]
-                          : _c(
-                              "span",
-                              { staticClass: "text-gray-700 text-lg" },
-                              [_vm._v(_vm._s(_vm.event.venue))]
-                            ),
-                      ],
-                      2
-                    ),
+                    _c("path", {
+                      attrs: {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+                      },
+                    }),
                   ]
                 ),
                 _vm._v(" "),
+                _c("span", { staticClass: "text-gray-700 text-lg" }, [
+                  _vm._v(_vm._s(_vm.formatDate(_vm.event.startDate))),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "font-normal text-sm mb-4 text-gray-600" },
+                [_vm._v("Time: ")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "mb-2" }, [
                 _c(
-                  "div",
+                  "svg",
                   {
-                    staticClass:
-                      "cursor-pointer text-center hover:bg-blue-500 bg-blue-600 text-md text-white font-bold shadow-lg p-3 w-full",
-                    on: {
-                      click: function ($event) {
-                        return _vm.addToCart(_vm.event)
-                      },
+                    staticClass: "svg_icon float-left mr-2",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      fill: "none",
+                      viewBox: "0 0 24 20",
+                      stroke: "currentColor",
                     },
                   },
-                  [_vm._v("ADD TO CART\n                ")]
+                  [
+                    _c("path", {
+                      attrs: {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+                      },
+                    }),
+                  ]
                 ),
                 _vm._v(" "),
-                this.$store.state.app.cart.length > 0
-                  ? _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mt-3 cursor-pointer hover:bg-green-500 bg-green-600 text-md text-white font-bold shadow-lg p-3 text-center",
-                      },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "order.checkout" } } },
-                          [_vm._v("PROCEED TO CHECKOUT")]
-                        ),
-                      ],
-                      1
-                    )
-                  : _vm._e(),
+                _c("span", { staticClass: "text-gray-700 text-lg" }, [
+                  _vm._v(
+                    _vm._s(_vm.formatTime(_vm.event.startTime)) +
+                      " - " +
+                      _vm._s(_vm.formatTime(_vm.event.endTime))
+                  ),
+                ]),
               ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "font-normal text-sm mb-4 text-gray-600" },
+                [_vm._v("Venue: ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "mb-4" },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "svg_icon float-left mr-2",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 20",
+                        stroke: "currentColor",
+                      },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm.event.eventType === "online"
+                    ? [
+                        _c("img", {
+                          staticClass: "float-left mr-2",
+                          attrs: {
+                            src: "https://img.icons8.com/color/25/000000/zoom.png",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-gray-700 text-lg font-font-semibold",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(
+                                  _vm.parsingJSONData(
+                                    _vm.event.onlineEventDetails
+                                  ).platform
+                                ) +
+                                "\n                            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    : _c("span", { staticClass: "text-gray-700 text-lg" }, [
+                        _vm._v(_vm._s(_vm.event.venue)),
+                      ]),
+                ],
+                2
+              ),
             ]
-          )
-        : _vm._e(),
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "cursor-pointer text-center hover:bg-blue-500 bg-blue-600 text-md text-white font-bold shadow-lg p-3 w-full",
+              on: {
+                click: function ($event) {
+                  return _vm.addToCart(_vm.event)
+                },
+              },
+            },
+            [_vm._v("ADD TO CART\n                ")]
+          ),
+          _vm._v(" "),
+          this.$store.state.app.cart.length > 0
+            ? _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-3 cursor-pointer hover:bg-green-500 bg-green-600 text-md text-white font-bold shadow-lg p-3 text-center",
+                },
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: { name: "order.checkout" } } },
+                    [_vm._v("PROCEED TO CHECKOUT")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+        ]),
+      ]),
     ]),
   ])
 }

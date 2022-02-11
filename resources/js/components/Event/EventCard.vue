@@ -107,10 +107,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-    .svg_icon {
-        width: 16px;
-        height: 17px;;
-    }
-</style>
